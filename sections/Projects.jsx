@@ -7,8 +7,44 @@ import Image from "next/image";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/lib/site-config";
+import nexoras from "@/public/assets/nexoras.png";
+import rent from "@/public/assets/rent.png";
+import expense from "@/public/assets/expense.png";
 
 const projects = [
+  {
+    id: 1,
+    title: "Nexora Social System",
+    desc: "A modern social media platform for connecting users and sharing content.",
+    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
+    color: "hsl(192 100% 50%)",
+    demo: "https://nexoras-social.vercel.app/signin/",
+    github: "https://github.com/web-nexoras/Nexora_Social_Frontend.git",
+    featured: true,
+    image: nexoras,
+  },
+  {
+    id: 1,
+    title: "Rent Nest Management System Backend",
+    desc: "A user-friendly platform for managing rental properties, tenants, and rent payments.",
+    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
+    color: "hsl(192 100% 50%)",
+    demo: "",
+    github: "https://github.com/web-nexoras/Rent_nest_Auth.git",
+    featured: true,
+    image: rent,
+  },
+  {
+    id: 1,
+    title: "Money Expense Tracker Backend",
+    desc: "A simple expense tracking app to manage daily spending and monitor budgets.",
+    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
+    color: "hsl(192 100% 50%)",
+    demo: "",
+    github: "https://github.com/web-nexoras/Money_Expense_Tracker.git",
+    featured: true,
+    image: expense,
+  },
   {
     id: 1,
     title: "Quick Sell BD — Fashion E-commerce",
