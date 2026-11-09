@@ -4,20 +4,12 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { isRtl } from "@/i18n/config";
 import { Space_Grotesk, Rajdhani, JetBrains_Mono } from "next/font/google";
-import { Noto_Sans, Noto_Sans_Bengali, Noto_Sans_Arabic, Noto_Sans_Devanagari, Noto_Sans_SC, Noto_Sans_JP } from "next/font/google";
 import "../globals.css";
 import { siteConfig } from "@/lib/site-config";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-space-grotesk", display: "swap" });
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-rajdhani", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-jetbrains-mono", display: "swap" });
-
-const notoSans = Noto_Sans({ subsets: ["latin", "cyrillic", "latin-ext"], weight: ["400", "500", "600", "700"], variable: "--font-noto-sans", display: "swap" });
-const notoBengali = Noto_Sans_Bengali({ subsets: ["bengali"], weight: ["400", "500", "600", "700"], variable: "--font-noto-bengali", display: "swap" });
-const notoArabic = Noto_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "600", "700"], variable: "--font-noto-arabic", display: "swap" });
-const notoDevanagari = Noto_Sans_Devanagari({ subsets: ["devanagari"], weight: ["400", "500", "600", "700"], variable: "--font-noto-devanagari", display: "swap" });
-const notoSC = Noto_Sans_SC({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-noto-sc", display: "swap" });
-const notoJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-noto-jp", display: "swap" });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -65,18 +57,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
 
   const messages = await getMessages();
   const rtl = isRtl(locale);
-  const fontVars = [
-    spaceGrotesk.variable,
-    rajdhani.variable,
-    jetbrainsMono.variable,
-    notoSans.variable,
-  ];
-  if (locale === "bn") fontVars.push(notoBengali.variable);
-  if (locale === "ar" || locale === "ur") fontVars.push(notoArabic.variable);
-  if (locale === "hi") fontVars.push(notoDevanagari.variable);
-  if (locale === "zh") fontVars.push(notoSC.variable);
-  if (locale === "ja") fontVars.push(notoJP.variable);
-  if (locale === "ru") fontVars.push(notoSans.variable);
+  const fontVars = [spaceGrotesk.variable, rajdhani.variable, jetbrainsMono.variable];
 
   const jsonLd = {
     "@context": "https://schema.org",
