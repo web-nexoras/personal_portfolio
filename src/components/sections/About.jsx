@@ -7,12 +7,13 @@ import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import SkillsDisplay from "@/components/SkillsDisplay";
 import { siteConfig } from "@/lib/site-config";
+import { useTranslations } from "next-intl";
 
 const stats = [
-  { value: "8+", label: "Projects Shipped" },
-  { value: "1+", label: "Years Experience" },
-  { value: "8+", label: "Happy Clients" },
-  { value: "99%", label: "On-time Delivery" },
+  { value: "10+", label: "Projects Shipped" },
+  { value: "2+", label: "Years Experience" },
+  { value: "5+", label: "Happy Clients" },
+  { value: "15+", label: "Tech Skills" },
 ];
 
 const highlights = [
@@ -45,13 +46,14 @@ const fadeRight = (delay = 0) => ({
 });
 
 export default function About() {
+  const t = useTranslations("About");
   return (
     <SectionWrapper id="about">
       <SectionHeading
-        tag="about us"
-        title="The Developers"
-        highlight="Behind the Code"
-        subtitle="MERN Stack Developer · Full Stack Developer · UI/UX Enthusiast — building fast, accessible, and modern web experiences."
+        tag={t("tag")}
+        title={t("title")}
+        highlight={t("highlight")}
+        subtitle={t("subtitle")}
       />
 
       <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center mb-20">

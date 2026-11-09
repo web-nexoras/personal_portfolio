@@ -3,14 +3,14 @@
 import { useState, useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
-import Hero from "@/sections/Hero";
-import About from "@/sections/About";
-import Projects from "@/sections/Projects";
-import Experience from "@/sections/Experience";
-import Services from "@/sections/Services";
-import Testimonials from "@/sections/Testimonials";
-import Contact from "@/sections/Contact";
-import Footer from "@/sections/Footer";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Projects from "@/components/sections/Projects";
+import Experience from "@/components/sections/Experience";
+import Services from "@/components/sections/Services";
+
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 
 const BackgroundCanvas = dynamic(() => import("@/components/BackgroundCanvas"), { ssr: false });
 
@@ -19,11 +19,8 @@ export default function Home() {
 
   useEffect(() => {
     const root = document.documentElement;
-    if (darkMode) {
-      root.classList.remove("light");
-    } else {
-      root.classList.add("light");
-    }
+    if (darkMode) root.classList.remove("light");
+    else root.classList.add("light");
   }, [darkMode]);
 
   return (
@@ -39,7 +36,6 @@ export default function Home() {
         <Projects />
         <Experience />
         <Services />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />

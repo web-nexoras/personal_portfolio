@@ -1,20 +1,23 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { key: "home", href: "#home" },
+  { key: "about", href: "#about" },
+  { key: "projects", href: "#projects" },
+  { key: "experience", href: "#experience" },
+  { key: "services", href: "#services" },
+  { key: "contact", href: "#contact" },
 ];
 
 export default function Navbar({ darkMode, toggleDarkMode }) {
+  const t = useTranslations("Nav");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -104,7 +107,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
-                  <span className="relative z-10">{link.label}</span>
+                  <span className="relative z-10">{t(link.key)}</span>
                 </button>
               );
             })}
@@ -112,6 +115,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
 
           {/* Right actions */}
           <div className="flex items-center gap-2.5">
+            <LanguageSwitcher />
             <motion.button
               onClick={toggleDarkMode}
               whileHover={{ scale: 1.05 }}
@@ -141,7 +145,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
               onClick={() => navTo("#contact")}
               style={{ color: "hsl(var(--primary))" }}
             >
-              Hire Me
+              {t("hireMe")}
             </button>
             <button
               className="md:hidden p-2 rounded-lg transition-all"
@@ -190,7 +194,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                       active === link.href.replace("#", "") ? "hsl(var(--primary) / 0.06)" : "transparent",
                   }}
                 >
-                  {link.label}
+                  {t(link.key)}
                 </motion.button>
               ))}
               <button
@@ -198,7 +202,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                 onClick={() => navTo("#contact")}
                 style={{ color: "hsl(var(--primary))" }}
               >
-                Hire Me
+                {t("hireMe")}
               </button>
             </div>
           </motion.div>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { siteConfig } from "@/lib/site-config";
 
 /* ---- Typing animation hook ---- */
@@ -50,6 +51,7 @@ function useTyping() {
 
 /* ---- Hero Section ---- */
 export default function Hero() {
+  const t = useTranslations("Hero");
   const typedText = useTyping();
 
   return (
@@ -92,7 +94,7 @@ export default function Hero() {
               }}
             >
               <span className="glow-dot" />
-              Available for work
+              {t("tag")}
             </motion.div>
 
             <motion.h1
@@ -102,7 +104,7 @@ export default function Hero() {
               className="font-display font-bold leading-tight"
               style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
             >
-              <span className="text-foreground">Hi, We&apos;re </span>
+              <span className="text-foreground">{t("title")} </span>
               <br />
               <span className="gradient-text">{siteConfig.brand}</span>
             </motion.h1>
@@ -125,9 +127,7 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="text-muted-foreground text-lg leading-relaxed max-w-lg mb-8"
             >
-              We build beautiful, high-performance web applications end to end —
-              from React/Next.js interfaces to Node.js &amp; MongoDB powered backends.
-              Turning complex ideas into clean, interactive products people love.
+              {t("description")}
             </motion.p>
 
             <motion.div
@@ -141,7 +141,7 @@ export default function Hero() {
                 className="btn-neon px-8 py-3 rounded-xl font-medium text-sm inline-block cursor-pointer"
                 style={{ color: "hsl(var(--primary))" }}
               >
-                View Projects
+                {t("ctaSecondary")}
               </a>
               <a
                 href="#contact"
@@ -152,7 +152,7 @@ export default function Hero() {
                   boxShadow: "0 4px 24px hsl(var(--primary) / 0.25)",
                 }}
               >
-                Let&apos;s Talk
+                {t("ctaPrimary")}
               </a>
             </motion.div>
 
@@ -163,9 +163,9 @@ export default function Hero() {
               className="flex gap-8"
             >
               {[
-                { value: "8+", label: "Projects Built" },
-                { value: "1+", label: "Years Coding" },
-                { value: "10+", label: "Tech Skills" },
+                { value: "10+", label: "Projects Built" },
+                { value: "2+", label: "Years Coding" },
+                { value: "15+", label: "Tech Skills" },
               ].map((stat) => (
                 <motion.div key={stat.label} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 300 }}>
                   <div className="gradient-text font-display font-bold text-2xl">{stat.value}</div>

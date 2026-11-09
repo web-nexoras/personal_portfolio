@@ -1,0 +1,32 @@
+{
+  "Meta": { "title": "Web_Nexoras — Pengembang MERN Stack dan Full-Stack", "description": "Web_Nexoras adalah pengembang MERN Stack / Full-Stack yang membangun aplikasi web cepat, modern, dan skalabel dengan React, Next.js, Node.js, Express, dan MongoDB." },
+  "Nav": { "home": "Beranda", "about": "Tentang", "projects": "Proyek", "experience": "Pengalaman", "services": "Layanan", "contact": "Kontak", "language": "Bahasa" },
+  "Hero": { "tag": "Tersedia untuk bekerja", "title": "Kami membangun", "highlight": "produk digital", "subtitle": "yang skalabel.", "description": "Tim pengembangan MERN Stack — pengalaman web cepat, aksesibel, dan modern dari database hingga deploy.", "ctaPrimary": "Hire Kami", "ctaSecondary": "Lihat Proyek" },
+  "About": {
+    "tag": "tentang kami", "title": "Para Developer", "highlight": "Di Balik Kode", "subtitle": "Pengembang MERN Stack · Pengembang Full-Stack · Antusias UI/UX",
+    "bio1": "Halo — kami {brand}, tim pengembangan MERN Stack di persimpangan engineering dan desain. Kami mengubah ide kompleks menjadi pengalaman web elegan, cepat, dan aksesibel.",
+    "bio2": "Dengan fokus mendalam pada arsitektur full-stack, kode bersih, dan UI yang delightful, kami membawa ketelitian teknis dan mata desainer ke setiap proyek.",
+    "highlights": [
+      "Pengembang MERN Stack — MongoDB, Express.js, React, dan Node.js end-to-end",
+      "Membangun REST API dan mengintegrasikannya dengan frontend React/Next.js modern",
+      "Fokus pada performa, skalabilitas, dan desain responsif",
+      "UI bersih dengan Tailwind CSS dan komponen yang dapat digunakan ulang",
+      "Antusias mempelajari teknologi baru dan berkontribusi pada proyek nyata"
+    ],
+    "stats": { "projects": "Proyek Dikirim", "experience": "Tahun Pengalaman", "clients": "Klien Puas", "delivery": "Tepat Waktu" },
+    "skillsTitle": "Keterampilan Teknis"
+  },
+  "Projects": { "tag": "proyek", "title": "Yang Kami", "highlight": "Bangun", "subtitle": "Kumpulan proyek yang menampilkan keterampilan, kreativitas, dan gairah kami terhadap perangkat lunak hebat.", "featured": "Unggulan", "liveDemo": "Demo Langsung", "code": "Kode", "viewAll": "Lihat Semua di GitHub", "loading": "Memuat proyek..." },
+  "Experience": { "tag": "pengalaman", "title": "Perjalanan", "highlight": "Saya", "subtitle": "Dari coder otodidak menjadi developer profesional — bagaimana terjadi." },
+  "Services": { "tag": "layanan", "title": "Yang Kami", "highlight": "Tawarkan", "subtitle": "Keahlian MERN Stack end-to-end — dari desain database hingga deploy." },
+  "Testimonials": { "tag": "testimoni", "title": "Apa Kata", "highlight": "Klien", "subtitle": "Jangan hanya percaya kata kami." },
+  "Contact": {
+    "tag": "kontak", "title": "Mari", "highlight": "Terhubung", "subtitle": "Punya ide proyek? Kami ingin mendengarnya. Mari bangun sesuatu yang hebat bersama.",
+    "name": "Nama Anda", "email": "Alamat Email", "message": "Pesan", "messagePlaceholder": "Ceritakan proyek Anda...", "send": "Kirim Pesan", "sending": "Mengirim...", "successTitle": "Pesan Terkirim!", "successText": "Terima kasih telah menghubungi. Kami akan membalas dalam 24 jam.", "sendAnother": "Kirim Lagi",
+    "info": { "email": "Email", "phone": "Telepon", "location": "Lokasi" },
+    "available": "Tersedia untuk proyek", "availableText": "Menerima pekerjaan klien baru. Waktu respons: dalam 24 jam.", "findUs": "// Temukan kami"
+  },
+  "Footer": { "quickLinks": "Tautan Cepat", "connect": "Terhubung", "available": "Tersedia untuk proyek baru", "copyright": "© {year} {brand}. Dibangun dengan React dan Next.js", "admin": "Admin" },
+  "Common": { "loading": "Memuat...", "error": "Terjadi kesalahan" },
+  "LanguageSwitcher": { "label": "Bahasa" }
+}

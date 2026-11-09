@@ -5,6 +5,7 @@ import { Server, Database, Palette, Rocket, Layers } from "lucide-react";
 import { SiReact } from "react-icons/si";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
+import { useTranslations } from "next-intl";
 
 const services = [
   {
@@ -52,13 +53,14 @@ const services = [
 ];
 
 export default function Services() {
+  const t = useTranslations("Services");
   return (
     <SectionWrapper id="services">
       <SectionHeading
-        tag="services"
-        title="What We"
-        highlight="Offer"
-        subtitle="End-to-end MERN stack expertise — from database design to deployment."
+        tag={t("tag")}
+        title={t("title")}
+        highlight={t("highlight")}
+        subtitle={t("subtitle")}
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

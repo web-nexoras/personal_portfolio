@@ -9,7 +9,7 @@ export const siteConfig = {
 
   // Used for canonical URLs, sitemap, robots.txt, and Open Graph.
   // Replace with your real production domain once you deploy.
-  siteUrl: "https://webnexoras.com",
+  siteUrl: "https://web-nexoras-portfolio.vercel.app",
 
   email: "webnexoras.bd@gmail.com",
   phone: "+880 1577-361304",
@@ -22,5 +22,5 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/webnexora",
   },
 
-  resumeUrl: "/resume.txt",
+  resumeUrl: "/resume.pdf",
 };

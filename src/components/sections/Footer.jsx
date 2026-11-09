@@ -4,6 +4,7 @@ import { Github, Linkedin, Facebook, ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { useTranslations } from "next-intl";
 
 const socials = [
   { icon: Github, label: "GitHub", href: siteConfig.socials.github },
@@ -21,6 +22,7 @@ const navLinks = [
 ];
 
 export default function Footer() {
+  const t = useTranslations("Footer");
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const handleSmoothScroll = (e, targetId) => {
@@ -55,7 +57,7 @@ export default function Footer() {
           {/* Navigation */}
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4 text-sm uppercase tracking-widest">
-              Quick Links
+              {t("quickLinks")}
             </h4>
             <nav className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
@@ -74,7 +76,7 @@ export default function Footer() {
           {/* Social & Status */}
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4 text-sm uppercase tracking-widest">
-              Connect
+              {t("connect")}
             </h4>
             <div className="flex gap-3 mb-6">
               {socials.map((s) => {
@@ -111,7 +113,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid hsl(var(--border))" }}
         >
           <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} {siteConfig.brand}. Built with React &amp; Next.js 🖤
+            {t("copyright", { year: new Date().getFullYear(), brand: siteConfig.brand })} 🖤
           </p>
 
           <motion.button

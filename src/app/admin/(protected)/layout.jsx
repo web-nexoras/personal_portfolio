@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { LayoutDashboard, FolderKanban, Mail, LogOut, Sun, Moon } from "lucide-react";
-import { api, getToken, setToken, clearToken } from "@/lib/api";
+import { api, getToken, clearToken } from "@/lib/api";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
@@ -13,7 +13,7 @@ const navItems = [
   { href: "/admin/contacts", label: "Contacts", icon: Mail },
 ];
 
-export default function AdminLayout({ children }) {
+export default function ProtectedLayout({ children }) {
   const router = useRouter();
   const pathname = usePathname();
   const [ready, setReady] = useState(false);
@@ -37,10 +37,6 @@ export default function AdminLayout({ children }) {
   }, [darkMode]);
 
   useEffect(() => {
-    if (pathname === "/admin/login") {
-      setReady(true);
-      return;
-    }
     const init = async () => {
       try {
         if (!getToken()) await api.refresh();
@@ -53,9 +49,9 @@ export default function AdminLayout({ children }) {
       }
     };
     init();
-  }, [pathname, router]);
+  }, [router]);
 
-  if (!ready && pathname !== "/admin/login") {
+  if (!ready) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: "hsl(var(--background))" }}>
         <motion.div
@@ -68,15 +64,11 @@ export default function AdminLayout({ children }) {
     );
   }
 
-  if (pathname === "/admin/login") return <>{children}</>;
-
   const handleLogout = async () => {
     try { await api.logout(); } catch {}
     clearToken();
     router.replace("/admin/login");
   };
-
-  const neoShadow = "6px 6px 12px hsl(var(--background-2)), -6px -6px 12px hsl(var(--muted))";
 
   return (
     <div className="min-h-screen flex" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>
@@ -109,7 +101,6 @@ export default function AdminLayout({ children }) {
                     background: active ? "hsl(var(--primary) / 0.12)" : "transparent",
                     color: active ? "hsl(var(--primary))" : "hsl(var(--foreground-muted))",
                     border: active ? "1px solid hsl(var(--primary) / 0.3)" : "1px solid transparent",
-                    boxShadow: active ? "var(--shadow-neon-sm)" : "none",
                   }}
                 >
                   <Icon size={18} />
@@ -126,11 +117,7 @@ export default function AdminLayout({ children }) {
           whileTap={{ scale: 0.98 }}
           onClick={() => setDarkMode((d) => !d)}
           className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium"
-          style={{
-            background: "transparent",
-            color: "hsl(var(--foreground-muted))",
-            border: "1px solid hsl(var(--border))",
-          }}
+          style={{ background: "transparent", color: "hsl(var(--foreground-muted))", border: "1px solid hsl(var(--border))" }}
         >
           {darkMode ? <Sun size={18} /> : <Moon size={18} />}
           {darkMode ? "Light Mode" : "Dark Mode"}
@@ -140,11 +127,7 @@ export default function AdminLayout({ children }) {
           whileTap={{ scale: 0.98 }}
           onClick={handleLogout}
           className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium"
-          style={{
-            background: "transparent",
-            color: "hsl(var(--destructive))",
-            border: "1px solid hsl(var(--destructive) / 0.3)",
-          }}
+          style={{ background: "transparent", color: "hsl(var(--destructive))", border: "1px solid hsl(var(--destructive) / 0.3)" }}
         >
           <LogOut size={18} />
           Logout

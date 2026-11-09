@@ -1,0 +1,113 @@
+{
+  "Meta": {
+    "title": "Web_Nexoras — MERN Stack & Full-Stack Web Developer",
+    "description": "Web_Nexoras is a MERN stack / full-stack web developer building fast, modern, and scalable web applications with React, Next.js, Node.js, Express and MongoDB."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "services": "Services",
+    "contact": "Contact",
+    "language": "Language",
+    "hireMe": "Hire Me"
+  },
+  "Hero": {
+    "tag": "Available for work",
+    "title": "We build",
+    "highlight": "digital products",
+    "subtitle": "that scale.",
+    "description": "MERN stack development team crafting fast, accessible and modern web experiences — from database to deployment.",
+    "ctaPrimary": "Hire Us",
+    "ctaSecondary": "View Projects"
+  },
+  "About": {
+    "tag": "about us",
+    "title": "The Developers",
+    "highlight": "Behind the Code",
+    "subtitle": "MERN Stack Developer · Full Stack Developer · UI/UX Enthusiast — building fast, accessible, and modern web experiences.",
+    "bio1": "Hey there — we're {brand}, a MERN stack development team living at the intersection of engineering and design. We transform complex ideas into elegant, fast, and accessible web experiences.",
+    "bio2": "With a deep focus on full-stack architecture, clean code, and delightful UI, we bring both technical rigour and a designer's eye to every project we ship.",
+    "highlights": [
+      "MERN stack developer — MongoDB, Express.js, React & Node.js end to end",
+      "Building REST APIs and integrating them with modern React/Next.js frontends",
+      "Focus on performance, scalability & responsive web design",
+      "Clean, user-friendly UI with Tailwind CSS and reusable components",
+      "Open to learning new technologies and contributing to real-world projects"
+    ],
+    "stats": {
+      "projects": "Projects Shipped",
+      "experience": "Years Experience",
+      "clients": "Happy Clients",
+      "delivery": "On-time Delivery"
+    },
+    "skillsTitle": "Technical Skills"
+  },
+  "Projects": {
+    "tag": "projects",
+    "title": "What We've",
+    "highlight": "Built",
+    "subtitle": "A collection of projects that showcase our skills, creativity, and passion for great software.",
+    "featured": "Featured",
+    "liveDemo": "Live Demo",
+    "code": "Code",
+    "viewAll": "View All on GitHub",
+    "loading": "Loading projects..."
+  },
+  "Experience": {
+    "tag": "experience",
+    "title": "Our",
+    "highlight": "Journey",
+    "subtitle": "From self-taught coder to professional developer — here's how it happened."
+  },
+  "Services": {
+    "tag": "services",
+    "title": "What We",
+    "highlight": "Offer",
+    "subtitle": "End-to-end MERN stack expertise — from database design to deployment."
+  },
+  "Testimonials": {
+    "tag": "testimonials",
+    "title": "What Clients",
+    "highlight": "Say",
+    "subtitle": "Don't just take our word for it."
+  },
+  "Contact": {
+    "tag": "contact",
+    "title": "Let's",
+    "highlight": "Connect",
+    "subtitle": "Have a project in mind? We'd love to hear about it. Let's build something great together.",
+    "name": "Your Name",
+    "email": "Email Address",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message Sent!",
+    "successText": "Thanks for reaching out. We'll get back to you within 24 hours.",
+    "sendAnother": "Send Another",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "available": "Available for projects",
+    "availableText": "Currently accepting new client work. Typical response time: within 24 hours.",
+    "findUs": "// Find us on"
+  },
+  "Footer": {
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "available": "Available for new projects",
+    "copyright": "© {year} {brand}. Built with React & Next.js",
+    "admin": "Admin"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  }
+}

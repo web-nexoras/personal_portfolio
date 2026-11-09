@@ -7,6 +7,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/lib/site-config";
 import { api } from "@/lib/api";
+import { useTranslations } from "next-intl";
 
 const socials = [
   { icon: Github, label: "GitHub", href: siteConfig.socials.github, color: "hsl(210 80% 55%)" },
@@ -21,6 +22,7 @@ const contactInfo = [
 ];
 
 export default function Contact() {
+  const t = useTranslations("Contact");
   const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -55,10 +57,10 @@ export default function Contact() {
   return (
     <SectionWrapper id="contact">
       <SectionHeading
-        tag="contact"
-        title="Let's"
-        highlight="Connect"
-        subtitle="Have a project in mind? We'd love to hear about it. Let's build something great together."
+        tag={t("tag")}
+        title={t("title")}
+        highlight={t("highlight")}
+        subtitle={t("subtitle")}
       />
 
       <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">

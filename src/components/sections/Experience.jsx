@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Briefcase, Award, ChevronRight } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
+import { useTranslations } from "next-intl";
 
 const experiences = [
   {
@@ -56,13 +57,14 @@ const experiences = [
   },
 ];
 export default function Experience() {
+  const t = useTranslations("Experience");
   return (
     <SectionWrapper id="experience">
       <SectionHeading
-        tag=" experience"
-        title="My"
-        highlight="Journey"
-        subtitle="From self-taught coder to professional developer — here's how it happened."
+        tag={t("tag")}
+        title={t("title")}
+        highlight={t("highlight")}
+        subtitle={t("subtitle")}
       />
 
       <div className="relative max-w-3xl mx-auto">

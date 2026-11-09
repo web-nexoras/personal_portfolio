@@ -1,0 +1,32 @@
+{
+  "Meta": { "title": "Web_Nexoras — MERN Stack und Full-Stack Webentwickler", "description": "Web_Nexoras ist ein MERN Stack / Full-Stack Webentwickler, der schnelle, moderne und skalierbare Webanwendungen mit React, Next.js, Node.js, Express und MongoDB erstellt." },
+  "Nav": { "home": "Start", "about": "Über uns", "projects": "Projekte", "experience": "Erfahrung", "services": "Leistungen", "contact": "Kontakt", "language": "Sprache" },
+  "Hero": { "tag": "Verfügbar für Projekte", "title": "Wir bauen", "highlight": "digitale Produkte", "subtitle": "die skalieren.", "description": "MERN Stack Entwicklungsteam — schnelle, barrierefreie und moderne Web-Erlebnisse von der Datenbank bis zum Deployment.", "ctaPrimary": "Uns engagieren", "ctaSecondary": "Projekte ansehen" },
+  "About": {
+    "tag": "über uns", "title": "Die Entwickler", "highlight": "Hinter dem Code", "subtitle": "MERN Stack Entwickler · Full-Stack Entwickler · UI/UX Enthusiast",
+    "bio1": "Hallo — wir sind {brand}, ein MERN Stack Entwicklungsteam an der Schnittstelle von Engineering und Design. Wir verwandeln komplexe Ideen in elegante, schnelle und barrierefreie Web-Erlebnisse.",
+    "bio2": "Mit tiefem Fokus auf Full-Stack-Architektur, sauberem Code und delightful UI bringen wir technische Exzellenz und Designerblick in jedes Projekt.",
+    "highlights": [
+      "MERN Stack Entwickler — MongoDB, Express.js, React und Node.js Ende-zu-Ende",
+      "REST APIs erstellen und in moderne React/Next.js Frontends integrieren",
+      "Fokus auf Performance, Skalierbarkeit und responsives Design",
+      "Saubere UI mit Tailwind CSS und wiederverwendbaren Komponenten",
+      "Begeisterung für neue Technologien und Beitrag zu echten Projekten"
+    ],
+    "stats": { "projects": "Gelieferte Projekte", "experience": "Jahre Erfahrung", "clients": "Zufriedene Kunden", "delivery": "Pünktliche Lieferung" },
+    "skillsTitle": "Technische Fähigkeiten"
+  },
+  "Projects": { "tag": "projekte", "title": "Was Wir", "highlight": "Gebaut Haben", "subtitle": "Eine Sammlung von Projekten, die unsere Fähigkeiten, Kreativität und Leidenschaft für großartige Software zeigen.", "featured": "Empfohlen", "liveDemo": "Live Demo", "code": "Code", "viewAll": "Alle auf GitHub ansehen", "loading": "Projekte werden geladen..." },
+  "Experience": { "tag": "erfahrung", "title": "Meine", "highlight": "Reise", "subtitle": "Vom autodidaktischen Coder zum professionellen Entwickler — so geschah es." },
+  "Services": { "tag": "leistungen", "title": "Was Wir", "highlight": "Anbieten", "subtitle": "MERN Stack Expertise von Ende zu Ende — vom Datenbankdesign bis zum Deployment." },
+  "Testimonials": { "tag": "referenzen", "title": "Was Kunden", "highlight": "Sagen", "subtitle": "Nehmen Sie nicht nur unser Wort." },
+  "Contact": {
+    "tag": "kontakt", "title": "Lassen Sie Uns", "highlight": "Verbinden", "subtitle": "Haben Sie ein Projekt im Sinn? Wir würden gerne davon hören. Lassen Sie uns gemeinsam etwas Großartiges bauen.",
+    "name": "Ihr Name", "email": "E-Mail-Adresse", "message": "Nachricht", "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt...", "send": "Nachricht Senden", "sending": "Wird gesendet...", "successTitle": "Nachricht Gesendet!", "successText": "Danke für Ihre Kontaktaufnahme. Wir antworten innerhalb von 24 Stunden.", "sendAnother": "Weitere Senden",
+    "info": { "email": "E-Mail", "phone": "Telefon", "location": "Standort" },
+    "available": "Verfügbar für Projekte", "availableText": "Wir nehmen neue Kundenprojekte an. Antwortzeit: innerhalb von 24 Stunden.", "findUs": "// Finden Sie uns"
+  },
+  "Footer": { "quickLinks": "Schnelllinks", "connect": "Verbinden", "available": "Verfügbar für neue Projekte", "copyright": "© {year} {brand}. Erstellt mit React und Next.js", "admin": "Admin" },
+  "Common": { "loading": "Wird geladen...", "error": "Etwas ist schiefgelaufen" },
+  "LanguageSwitcher": { "label": "Sprache" }
+}
