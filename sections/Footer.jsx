@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, Facebook, ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
 const socials = [

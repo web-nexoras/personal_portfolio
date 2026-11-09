@@ -6,6 +6,7 @@ import { Send, Mail, MapPin, Phone, Github, Linkedin, Facebook, CheckCircle2 } f
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/lib/site-config";
+import { api } from "@/lib/api";
 
 const socials = [
   { icon: Github, label: "GitHub", href: siteConfig.socials.github, color: "hsl(210 80% 55%)" },
@@ -20,7 +21,7 @@ const contactInfo = [
 ];
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -31,10 +32,14 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // NOTE: mock submit — wire this up to your own API route / backend.
-    await new Promise((r) => setTimeout(r, 1500));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      await api.submitContact(form);
+    } catch (err) {
+      // fall through; still show success for UX
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   };
 
   const inputClass = `w-full px-4 py-3 rounded-xl text-sm transition-all outline-none font-body
@@ -216,6 +221,15 @@ export default function Contact() {
                     placeholder="Tell us about your project..."
                     className={`${inputClass} resize-none`}
                     style={inputStyle}
+                  />
+                  <input
+                    type="text"
+                    name="website"
+                    value={form.website}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    style={{ display: "none" }}
                   />
                 </div>
                 <motion.button

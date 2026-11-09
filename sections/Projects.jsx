@@ -1,128 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { siteConfig } from "@/lib/site-config";
-import nexoras from "@/public/assets/nexoras.png";
-import rent from "@/public/assets/rent.png";
-import expense from "@/public/assets/expense.png";
 
-const projects = [
-  {
-    id: 1,
-    title: "Nexora Social System",
-    desc: "A modern social media platform for connecting users and sharing content.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
-    color: "hsl(192 100% 50%)",
-    demo: "https://nexoras-social.vercel.app/signin/",
-    github: "https://github.com/web-nexoras/Nexora_Social_Frontend.git",
-    featured: true,
-    image: nexoras,
-  },
-  {
-    id: 1,
-    title: "Rent Nest Management System Backend",
-    desc: "A user-friendly platform for managing rental properties, tenants, and rent payments.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
-    color: "hsl(192 100% 50%)",
-    demo: "",
-    github: "https://github.com/web-nexoras/Rent_nest_Auth.git",
-    featured: true,
-    image: rent,
-  },
-  {
-    id: 1,
-    title: "Money Expense Tracker Backend",
-    desc: "A simple expense tracking app to manage daily spending and monitor budgets.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind"],
-    color: "hsl(192 100% 50%)",
-    demo: "",
-    github: "https://github.com/web-nexoras/Money_Expense_Tracker.git",
-    featured: true,
-    image: expense,
-  },
-  {
-    id: 1,
-    title: "Quick Sell BD — Fashion E-commerce",
-    desc: "A modern e-commerce platform for selling fashion items online.",
-    tags: ["React", "TypeScript", "Recharts", "Tailwind"],
-    color: "hsl(192 100% 50%)",
-    demo: "https://quick-sell-bd.vercel.app/",
-    github: "https://github.com/mahirTheCoder/Quick_Sell_BD.git",
-    featured: true,
-    image: "/assets/quick.png",
-  },
-  {
-    id: 2,
-    title: "Bushu's Wear E-Commerce Store",
-    desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
-    tags: ["React", "Vite", "TypeScript", "Tailwind"],
-    color: "hsl(142 70% 45%)",
-    demo: "https://wear-store.vercel.app/",
-    github: "https://github.com/mahirTheCoder/Bushu-s-Wear.git",
-    featured: false,
-    image: "/assets/bushus.png",
-  },
-  {
-    id: 3,
-    title: "FoodZoone BD — Restaurant Website",
-    desc: "Full-featured restaurant ordering experience with menu browsing, cart management, and a mobile-first design.",
-    tags: ["React", "Vite", "TypeScript", "Tailwind"],
-    color: "hsl(142 70% 45%)",
-    demo: "https://khabarbari.vercel.app/",
-    github: "https://github.com/mahirTheCoder/Foodie.git",
-    featured: false,
-    image: "/assets/restu.png",
-  },
-  {
-    id: 4,
-    title: "Nextone E-Commerce Store",
-    desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
-    tags: ["React", "Vite", "Tailwind"],
-    color: "hsl(142 70% 45%)",
-    demo: "https://nexton-e-commerce-eosin.vercel.app/",
-    github: "https://github.com/mahirTheCoder/Nexton-E-commerce.git",
-    featured: false,
-    image: "/assets/next.png",
-  },
-  {
-    id: 5,
-    title: "Candle E-Commerce Shop",
-    desc: "Full-featured shopping experience with cart management, product filters, payment integration, and mobile-first design.",
-    tags: ["React", "Vite", "Tailwind"],
-    color: "hsl(142 70% 45%)",
-    demo: "https://candle-xi-tan.vercel.app/",
-    github: "https://github.com/mahirTheCoder/candle.git",
-    featured: false,
-    image: "/assets/can.png",
-  },
-  {
-    id: 6,
-    title: "LUXDRIVE Landing Page",
-    desc: "Drive premium. Ride in style — luxury car rental landing page with effortless booking flow and unmatched comfort.",
-    tags: ["React", "Vite", "Tailwind"],
-    color: "hsl(30 90% 55%)",
-    demo: "https://luxdrive-ueuq.vercel.app/",
-    github: "https://github.com/mahirTheCoder/LUXDRIVE.git",
-    featured: false,
-    image: "/assets/Lux.png",
-  },
-  {
-    id: 7,
-    title: "Furniture Landing Page",
-    desc: "A modern and fully responsive furniture website with clean UI design, smooth UX, and cross-device compatibility.",
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    color: "hsl(192 80% 55%)",
-    demo: "https://mahirthecoder.github.io/project_-furniture/",
-    github: "https://github.com/mahirTheCoder/project_-furniture.git",
-    featured: false,
-    image: "/assets/furniture.png",
-  },
-];
+import { api } from "@/lib/api";
+
+// Projects are now fetched from the separate portfolio backend API.
 
 function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
@@ -261,6 +149,41 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+    api
+      .getProjects()
+      .then((data) => {
+        if (!mounted) return;
+        const list = Array.isArray(data) ? data : [];
+        const mapped = list.map((p, i) => ({
+          id: p._id || p.slug || i,
+          slug: p.slug,
+          title: p.title,
+          desc: p.shortDescription || p.description || "",
+          tags: p.techStack || [],
+          color: "hsl(192 100% 50%)",
+          demo: p.liveUrl || "",
+          github: p.githubClientUrl || p.githubServerUrl || "",
+          featured: !!p.featured,
+          image: p.thumbnail?.url || p.image || "/assets/nexoras.png",
+        }));
+        setProjects(mapped);
+      })
+      .catch(() => {
+        if (mounted) setProjects([]);
+      })
+      .finally(() => {
+        if (mounted) setLoading(false);
+      });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   return (
     <SectionWrapper id="projects">
       <SectionHeading
@@ -269,11 +192,15 @@ export default function Projects() {
         highlight="Built"
         subtitle="A collection of projects that showcase our skills, creativity, and passion for great software."
       />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} index={i} />
-        ))}
-      </div>
+      {loading ? (
+        <p className="text-center text-muted-foreground">Loading projects...</p>
+      ) : (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, i) => (
+            <ProjectCard key={project.id || i} project={project} index={i} />
+          ))}
+        </div>
+      )}
       <motion.div
         className="text-center mt-14"
         initial={{ opacity: 0, y: 20 }}
