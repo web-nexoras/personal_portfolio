@@ -90,7 +90,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
               const id = link.href.replace("#", "");
               return (
                 <button
-                  key={link.label}
+                  key={link.key}
                   onClick={() => navTo(link.href)}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg ${
                     active === id ? "text-primary" : "text-muted-foreground hover:text-foreground"
@@ -183,7 +183,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => (
                 <motion.button
-                  key={link.label}
+                  key={link.key}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.04 }}
