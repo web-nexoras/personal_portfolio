@@ -1,14 +1,49 @@
-Web_Nexoras Resume
+================================================================================
+WEB_NEXORAS
+MERN Stack & Full-Stack Web Developer
+================================================================================
+Location : Dhaka, Bangladesh (Available Worldwide / Remote)
+Email    : webnexoras.bd@gmail.com
+Phone    : +880 1577-361304
+GitHub   : https://github.com/web-nexoras
+LinkedIn : https://www.linkedin.com/in/web-nexoras-3b7779369/
+Portfolio: https://web-nexoras-portfolio.vercel.app
 
-Role: MERN Stack & Full Stack Developer
+--------------------------------------------------------------------------------
+PROFESSIONAL SUMMARY
+--------------------------------------------------------------------------------
+Results-driven Full-Stack MERN Developer with 2+ years of hands-on experience
+designing, developing, and deploying scalable web applications. Proficient in
+React.js, Next.js, Node.js, Express.js, and MongoDB, with a strong focus on
+clean architecture, RESTful API design, authentication security, and responsive
+UI/UX engineering.
 
-Skills:
-- React.js / Next.js
-- Node.js / Express.js
-- MongoDB / Mongoose
-- Tailwind CSS / UI design
-- REST API development
-- Performance optimization
+--------------------------------------------------------------------------------
+TECHNICAL SKILLS
+--------------------------------------------------------------------------------
+- Frontend : React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS,
+             Redux, Framer Motion, HTML5, CSS3
+- Backend  : Node.js, Express.js, RESTful APIs, JWT Authentication, Zod
+- Database : MongoDB, Mongoose, Redis
+- DevOps   : Git, GitHub, Docker, Vercel, Cloudinary, Postman, Figma
 
-Summary:
-Web_Nexoras builds clean, fast, and scalable web applications for businesses and startups.
+--------------------------------------------------------------------------------
+PROFESSIONAL EXPERIENCE
+--------------------------------------------------------------------------------
+Full-Stack MERN Developer | Freelance & Independent Projects (2025 – Present)
+- Architected and delivered full-stack web applications using Next.js, React,
+  Node.js, Express, and MongoDB.
+- Implemented secure JWT authentication, role-based access control, and cloud
+  media pipelines.
+- Optimized frontend performance, Core Web Vitals, and technical SEO.
+
+Frontend Developer Intern | Creative IT Institute (2025)
+- Developed responsive, accessible user interfaces using React.js, TypeScript,
+  and Tailwind CSS.
+- Collaborated on reusable component libraries, state management, and REST API
+  integration.
+
+--------------------------------------------------------------------------------
+CERTIFICATIONS
+--------------------------------------------------------------------------------
+- Professional React & Frontend Development Certification — Creative IT (2025)

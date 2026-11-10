@@ -113,11 +113,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-4 mb-6 font-mono text-xl md:text-2xl font-medium flex items-center gap-1"
+              className="mt-4 mb-6 font-mono text-base sm:text-xl md:text-2xl font-medium flex items-start gap-1 min-w-0"
               style={{ color: "hsl(var(--primary))" }}
             >
               <span>&gt;&nbsp;</span>
-              <span>{typedText}</span>
+              <span className="min-w-0 break-words">{typedText}</span>
               <span className="inline-block w-0.5 h-[1.1em] bg-primary animate-[typing-cursor_1s_ease-in-out_infinite] align-middle" />
             </motion.div>
 
@@ -160,7 +160,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.88, duration: 0.5 }}
-              className="flex gap-8"
+              className="flex flex-wrap gap-x-6 gap-y-3 sm:gap-8"
             >
               {[
                 { value: "10+", label: "Projects Built" },
@@ -186,13 +186,14 @@ export default function Hero() {
               <div className="absolute -inset-6 rounded-3xl opacity-20 blur-2xl" style={{ background: "var(--gradient-primary)" }} />
               <div className="absolute -top-3 -right-3 w-24 h-24 rounded-2xl" style={{ background: "hsl(var(--primary) / 0.08)", border: "1px solid hsl(var(--primary) / 0.2)" }} />
               <div className="absolute -bottom-3 -left-3 w-16 h-16 rounded-xl" style={{ background: "hsl(var(--secondary) / 0.08)", border: "1px solid hsl(var(--secondary) / 0.2)" }} />
-              <div className="relative w-72 h-80 sm:w-80 sm:h-96">
+              <div className="relative w-[min(18rem,calc(100vw-3rem))] aspect-[0.9] sm:w-80 sm:h-96 sm:aspect-auto">
 
                 <motion.div
                   className="absolute inset-0 rounded-2xl overflow-hidden"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.35 }}
                   style={{
+                    position: "absolute",
                     boxShadow: "0 20px 60px hsl(var(--primary) / 0.2), 0 4px 16px hsl(0 0% 0% / 0.15)",
                   }}
                 >

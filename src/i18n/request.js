@@ -6,14 +6,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
   if (!locale || !routing.locales.includes(locale)) {
     locale = routing.defaultLocale;
   }
-  const base = (await import(`../../messages/en.json`)).default;
-  const localeMessages = locale === "en" ? {} : (await import(`../../messages/${locale}.json`)).default;
-  const messages = { ...base, ...localeMessages };
-  // deep merge top-level namespaces
-  for (const key of Object.keys(base)) {
-    if (base[key] && typeof base[key] === "object" && localeMessages[key]) {
-      messages[key] = { ...base[key], ...localeMessages[key] };
-    }
-  }
+  const messages = (await import("../../messages/en.json")).default;
   return { locale, messages };
 });

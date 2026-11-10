@@ -1,13 +1,12 @@
-import { routing } from "@/i18n/routing";
-
-const baseUrl = "https://webnexoras.com";
+import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap() {
-  const languages = Object.fromEntries(routing.locales.map((l) => [l, `${baseUrl}/${l}`]));
-  const entries = routing.locales.map((locale) => ({
-    url: `${baseUrl}/${locale}`,
-    lastModified: new Date(),
-    alternates: { languages },
-  }));
-  return entries;
+  return [
+    {
+      url: siteConfig.siteUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+  ];
 }

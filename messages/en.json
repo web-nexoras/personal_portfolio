@@ -1,7 +1,7 @@
 {
   "Meta": {
     "title": "Web_Nexoras — MERN Stack & Full-Stack Web Developer",
-    "description": "Web_Nexoras is a MERN stack / full-stack web developer building fast, modern, and scalable web applications with React, Next.js, Node.js, Express and MongoDB."
+    "description": "Web_Nexoras is a MERN stack & full-stack web developer building fast, modern, and scalable web applications with React, Next.js, Node.js, Express, and MongoDB."
   },
   "Nav": {
     "home": "Home",
@@ -10,31 +10,30 @@
     "experience": "Experience",
     "services": "Services",
     "contact": "Contact",
-    "language": "Language",
     "hireMe": "Hire Me"
   },
   "Hero": {
     "tag": "Available for work",
-    "title": "We build",
+    "title": "Building scalable",
     "highlight": "digital products",
-    "subtitle": "that scale.",
-    "description": "MERN stack development team crafting fast, accessible and modern web experiences — from database to deployment.",
-    "ctaPrimary": "Hire Us",
+    "subtitle": "that perform.",
+    "description": "Full-stack MERN developer crafting fast, accessible, and production-grade web applications — from database architecture to cloud deployment.",
+    "ctaPrimary": "Hire Me",
     "ctaSecondary": "View Projects"
   },
   "About": {
-    "tag": "about us",
-    "title": "The Developers",
+    "tag": "about me",
+    "title": "The Developer",
     "highlight": "Behind the Code",
-    "subtitle": "MERN Stack Developer · Full Stack Developer · UI/UX Enthusiast — building fast, accessible, and modern web experiences.",
-    "bio1": "Hey there — we're {brand}, a MERN stack development team living at the intersection of engineering and design. We transform complex ideas into elegant, fast, and accessible web experiences.",
-    "bio2": "With a deep focus on full-stack architecture, clean code, and delightful UI, we bring both technical rigour and a designer's eye to every project we ship.",
+    "subtitle": "MERN Stack Developer · Full-Stack Engineer · UI/UX Specialist — architecting fast, accessible, and scalable web solutions.",
+    "bio1": "Hello — I'm {brand}, a full-stack MERN developer working at the intersection of software engineering and modern UI design. I transform complex business requirements into fast, reliable, and intuitive web applications.",
+    "bio2": "With a strong focus on scalable backend architecture, clean maintainable code, and responsive interfaces, I bring both engineering rigor and attention to detail to every product I deliver.",
     "highlights": [
-      "MERN stack developer — MongoDB, Express.js, React & Node.js end to end",
-      "Building REST APIs and integrating them with modern React/Next.js frontends",
-      "Focus on performance, scalability & responsive web design",
-      "Clean, user-friendly UI with Tailwind CSS and reusable components",
-      "Open to learning new technologies and contributing to real-world projects"
+      "End-to-end MERN stack development — MongoDB, Express.js, React.js, Next.js & Node.js",
+      "Designing secure RESTful APIs with JWT authentication, validation, and role-based access control",
+      "Engineering high-performance, SEO-optimized, and responsive user interfaces with Tailwind CSS",
+      "Database schema modeling, indexing, and query optimization for production workloads",
+      "Delivering clean, modular codebases with modern Git workflows and cloud deployments"
     ],
     "stats": {
       "projects": "Projects Shipped",
@@ -46,68 +45,65 @@
   },
   "Projects": {
     "tag": "projects",
-    "title": "What We've",
-    "highlight": "Built",
-    "subtitle": "A collection of projects that showcase our skills, creativity, and passion for great software.",
+    "title": "Featured",
+    "highlight": "Projects",
+    "subtitle": "A curated selection of full-stack applications and frontend interfaces engineered for performance and usability.",
     "featured": "Featured",
     "liveDemo": "Live Demo",
-    "code": "Code",
+    "code": "Source Code",
     "viewAll": "View All on GitHub",
     "loading": "Loading projects..."
   },
   "Experience": {
     "tag": "experience",
-    "title": "Our",
+    "title": "Professional",
     "highlight": "Journey",
-    "subtitle": "From self-taught coder to professional developer — here's how it happened."
+    "subtitle": "My career progression, technical certifications, and hands-on engineering experience."
   },
   "Services": {
     "tag": "services",
-    "title": "What We",
-    "highlight": "Offer",
-    "subtitle": "End-to-end MERN stack expertise — from database design to deployment."
+    "title": "Services",
+    "highlight": "Offered",
+    "subtitle": "Comprehensive full-stack development services — from system architecture to production deployment."
   },
   "Testimonials": {
     "tag": "testimonials",
-    "title": "What Clients",
-    "highlight": "Say",
-    "subtitle": "Don't just take our word for it."
+    "title": "Client",
+    "highlight": "Feedback",
+    "subtitle": "Trusted by clients and collaborators for delivering reliable, high-quality web solutions."
   },
   "Contact": {
     "tag": "contact",
     "title": "Let's",
     "highlight": "Connect",
-    "subtitle": "Have a project in mind? We'd love to hear about it. Let's build something great together.",
+    "subtitle": "Have a project in mind or looking to hire a developer? Let's discuss how I can help bring your vision to life.",
     "name": "Your Name",
     "email": "Email Address",
     "message": "Message",
-    "messagePlaceholder": "Tell us about your project...",
+    "messagePlaceholder": "Tell me about your project, timeline, and goals...",
     "send": "Send Message",
     "sending": "Sending...",
     "successTitle": "Message Sent!",
-    "successText": "Thanks for reaching out. We'll get back to you within 24 hours.",
+    "successText": "Thank you for reaching out. I'll review your message and respond within 24 hours.",
     "sendAnother": "Send Another",
     "info": {
       "email": "Email",
       "phone": "Phone",
       "location": "Location"
     },
-    "available": "Available for projects",
-    "availableText": "Currently accepting new client work. Typical response time: within 24 hours.",
-    "findUs": "// Find us on"
+    "available": "Available for new opportunities",
+    "availableText": "Currently open to freelance projects and full-time roles. Typical response time: within 24 hours.",
+    "findUs": "// Connect with me"
   },
   "Footer": {
     "quickLinks": "Quick Links",
     "connect": "Connect",
     "available": "Available for new projects",
-    "copyright": "© {year} {brand}. Built with React & Next.js",
+    "copyright": "© {year} {brand}. Engineered with Next.js & Tailwind CSS.",
     "admin": "Admin"
   },
   "Common": {
     "loading": "Loading...",
     "error": "Something went wrong"
-  },
-  "LanguageSwitcher": {
-    "label": "Language"
   }
 }

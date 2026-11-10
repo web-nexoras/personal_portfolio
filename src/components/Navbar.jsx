@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const navLinks = [
   { key: "home", href: "#home" },
@@ -85,7 +84,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-0.5">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => {
               const id = link.href.replace("#", "");
               return (
@@ -115,7 +114,6 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
 
           {/* Right actions */}
           <div className="flex items-center gap-2.5">
-            <LanguageSwitcher />
             <motion.button
               onClick={toggleDarkMode}
               whileHover={{ scale: 1.05 }}
@@ -141,14 +139,14 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
               </AnimatePresence>
             </motion.button>
             <button
-              className="hidden md:block btn-neon px-5 py-2 rounded-lg text-sm font-medium font-mono"
+              className="hidden lg:block btn-neon px-5 py-2 rounded-lg text-sm font-medium font-mono"
               onClick={() => navTo("#contact")}
               style={{ color: "hsl(var(--primary))" }}
             >
               {t("hireMe")}
             </button>
             <button
-              className="md:hidden p-2 rounded-lg transition-all"
+              className="lg:hidden p-2 rounded-lg transition-all"
               style={{
                 border: "1px solid hsl(var(--border))",
                 color: "hsl(var(--muted-foreground))",
@@ -170,7 +168,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -16, scale: 0.98 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="fixed top-[60px] left-0 right-0 z-40 md:hidden"
+            className="fixed top-[60px] left-0 right-0 z-40 lg:hidden"
             style={{
               background: darkMode ? "hsl(240 50% 3% / 0.97)" : "hsl(220 30% 98% / 0.97)",
               backdropFilter: "blur(20px) saturate(180%)",

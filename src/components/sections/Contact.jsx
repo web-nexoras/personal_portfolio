@@ -26,6 +26,7 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -34,13 +35,14 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
     try {
       await api.submitContact(form);
+      setSubmitted(true);
     } catch (err) {
-      // fall through; still show success for UX
+      setError(err.message || "Failed to send message. Please try again.");
     } finally {
       setLoading(false);
-      setSubmitted(true);
     }
   };
 
@@ -76,9 +78,9 @@ export default function Contact() {
                 >
                   <Icon size={16} style={{ color: item.color }} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs text-muted-foreground">{item.label}</div>
-                  <div className="text-sm font-medium text-foreground">{item.value}</div>
+                  <div className="break-all text-sm font-medium text-foreground">{item.value}</div>
                 </div>
               </>
             );
@@ -104,7 +106,7 @@ export default function Contact() {
 
           {/* Socials */}
           <div>
-            <p className="text-muted-foreground text-sm mb-3 font-mono">// Find us on</p>
+            <p className="text-muted-foreground text-sm mb-3 font-mono">// Connect with me</p>
             <div className="flex gap-3">
               {socials.map((social, i) => {
                 const Icon = social.icon;
@@ -170,12 +172,13 @@ export default function Contact() {
                 </motion.div>
                 <h3 className="font-display font-bold text-2xl text-foreground mb-2">Message Sent!</h3>
                 <p className="text-muted-foreground text-sm">
-                  Thanks for reaching out. We&apos;ll get back to you within 24 hours.
+                  Thank you for reaching out. I&apos;ll review your message and respond within 24 hours.
                 </p>
                 <button
                   onClick={() => {
                     setSubmitted(false);
-                    setForm({ name: "", email: "", message: "" });
+                    setError("");
+                    setForm({ name: "", email: "", message: "", website: "" });
                   }}
                   className="mt-6 btn-neon px-6 py-2 rounded-lg text-sm font-medium"
                   style={{ color: "hsl(var(--primary))" }}
@@ -185,6 +188,11 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {error && (
+                  <p className="text-red-400 text-xs font-mono bg-red-500/10 border border-red-500/25 rounded-lg px-3 py-2">
+                    {error}
+                  </p>
+                )}
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-mono text-muted-foreground mb-1.5">Your Name</label>
@@ -220,7 +228,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    placeholder="Tell us about your project..."
+                    placeholder="Tell me about your project, timeline, and goals..."
                     className={`${inputClass} resize-none`}
                     style={inputStyle}
                   />

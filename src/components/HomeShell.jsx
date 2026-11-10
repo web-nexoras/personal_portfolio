@@ -17,9 +17,17 @@ export default function HomeShell({ projects }) {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
+    const stored = typeof window !== "undefined" ? localStorage.getItem("portfolioDarkMode") : null;
+    if (stored !== null) {
+      setDarkMode(stored === "true");
+    }
+  }, []);
+
+  useEffect(() => {
     const root = document.documentElement;
     if (darkMode) root.classList.remove("light");
     else root.classList.add("light");
+    if (typeof window !== "undefined") localStorage.setItem("portfolioDarkMode", String(darkMode));
   }, [darkMode]);
 
   return (

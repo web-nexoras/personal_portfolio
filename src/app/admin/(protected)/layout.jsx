@@ -71,15 +71,15 @@ export default function ProtectedLayout({ children }) {
   };
 
   return (
-    <div className="min-h-screen flex" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>
+    <div className="min-h-screen flex flex-col md:flex-row" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>
       <motion.aside
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="w-64 p-4 flex flex-col gap-2"
-        style={{ background: "hsl(var(--background-2))", borderRight: "1px solid hsl(var(--border))" }}
+        className="w-full md:w-64 md:shrink-0 p-3 md:p-4 grid grid-cols-2 md:flex md:flex-col gap-2 border-b md:border-b-0 md:border-r border-border"
+        style={{ background: "hsl(var(--background-2))" }}
       >
-        <div className="mb-6 px-2">
+        <div className="col-span-2 md:col-span-1 mb-2 md:mb-6 px-2">
           <h2 className="text-xl font-bold font-display">
             <span className="gradient-text">Admin</span>
             <span className="text-foreground"> Panel</span>
@@ -87,7 +87,7 @@ export default function ProtectedLayout({ children }) {
           {user && <p className="text-xs text-muted-foreground mt-1 truncate">{user.email}</p>}
         </div>
 
-        <nav className="flex flex-col gap-2">
+        <nav className="col-span-2 md:col-span-1 flex flex-row flex-wrap md:flex-col gap-2">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = pathname === item.href;
@@ -96,7 +96,7 @@ export default function ProtectedLayout({ children }) {
                 <motion.div
                   whileHover={{ x: 4 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors"
+                  className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2.5 md:py-3 rounded-xl text-sm font-medium transition-colors"
                   style={{
                     background: active ? "hsl(var(--primary) / 0.12)" : "transparent",
                     color: active ? "hsl(var(--primary))" : "hsl(var(--foreground-muted))",
@@ -111,22 +111,22 @@ export default function ProtectedLayout({ children }) {
           })}
         </nav>
 
-        <div className="flex-1" />
+        <div className="hidden md:block flex-1" />
         <motion.button
           whileHover={{ x: 4 }}
           whileTap={{ scale: 0.98 }}
           onClick={() => setDarkMode((d) => !d)}
-          className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium"
+          className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2.5 md:py-3 rounded-xl text-sm font-medium"
           style={{ background: "transparent", color: "hsl(var(--foreground-muted))", border: "1px solid hsl(var(--border))" }}
         >
           {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-          {darkMode ? "Light Mode" : "Dark Mode"}
+          <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
         </motion.button>
         <motion.button
           whileHover={{ x: 4 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleLogout}
-          className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium"
+          className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2.5 md:py-3 rounded-xl text-sm font-medium"
           style={{ background: "transparent", color: "hsl(var(--destructive))", border: "1px solid hsl(var(--destructive) / 0.3)" }}
         >
           <LogOut size={18} />
@@ -138,7 +138,7 @@ export default function ProtectedLayout({ children }) {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="flex-1 p-6 md:p-8 overflow-auto"
+        className="min-w-0 flex-1 p-4 sm:p-6 md:p-8 overflow-auto"
       >
         {children}
       </motion.main>

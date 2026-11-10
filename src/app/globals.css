@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -71,9 +71,9 @@
     --border-glow:        1px solid hsl(var(--primary) / 0.2);
     --border-subtle:      1px solid hsl(var(--border));
 
-    --font-display: var(--font-rajdhani), sans-serif;
-    --font-body:    var(--font-space-grotesk), sans-serif;
-    --font-mono:    var(--font-jetbrains-mono), monospace;
+    --font-display: "Rajdhani", sans-serif;
+    --font-body:    "Space Grotesk", sans-serif;
+    --font-mono:    "JetBrains Mono", monospace;
 
     /* Particle/blob tint for dark */
     --particle-color:    192 100% 50%;

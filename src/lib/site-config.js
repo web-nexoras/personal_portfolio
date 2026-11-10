@@ -1,4 +1,3 @@
-
 export const siteConfig = {
   brand: "Web_Nexoras",
   brandShort: "Web",
@@ -9,7 +8,7 @@ export const siteConfig = {
 
   // Used for canonical URLs, sitemap, robots.txt, and Open Graph.
   // Replace with your real production domain once you deploy.
-  siteUrl: "https://web-nexoras-portfolio.vercel.app",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://web-nexoras-portfolio.vercel.app",
 
   email: "webnexoras.bd@gmail.com",
   phone: "+880 1577-361304",
@@ -22,5 +21,5 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/webnexora",
   },
 
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/resume.txt",
 };

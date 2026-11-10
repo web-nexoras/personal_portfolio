@@ -8,54 +8,55 @@ import { useTranslations } from "next-intl";
 
 const experiences = [
   {
-    period: "2026 – Present",
-    role: "Freelance React Developer",
-    company: "Self-Employed",
+    period: "2025 – Present",
+    role: "Full-Stack MERN Developer",
+    company: "Freelance & Independent Projects",
     type: "work",
     achievements: [
-      "Built small React projects and landing pages for practice",
-      "Experimented with Tailwind and Next.js for UI improvements",
-      "Gained experience in responsive and modern frontend design",
+      "Architected and delivered full-stack web applications using Next.js, React, Node.js, Express, and MongoDB",
+      "Implemented secure JWT authentication, RESTful APIs, role-based access control, and cloud media pipelines",
+      "Optimized frontend performance, Core Web Vitals, and SEO for client-facing production deployments",
     ],
-    stack: ["React", "TypeScript", "Tailwind", "Next.js"],
+    stack: ["Next.js", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
   },
   {
     period: "2025",
     role: "Frontend Developer Intern",
-    company: "Creative IT",
+    company: "Creative IT Institute",
     type: "work",
     achievements: [
-      "Learned React fundamentals during internship",
-      "Contributed to minor projects / small components",
-      "Explored Redux, basic testing, and UI improvements",
+      "Developed responsive, accessible user interfaces using React.js, TypeScript, and Tailwind CSS",
+      "Collaborated on reusable component libraries, state management with Redux, and REST API integration",
+      "Improved UI consistency, cross-browser compatibility, and page load performance across web modules",
     ],
-    stack: ["React", "Redux", "JavaScript", "CSS"],
+    stack: ["React", "Redux", "TypeScript", "JavaScript", "Tailwind CSS"],
   },
   {
     period: "2025",
-    role: "React Developer Certificate",
-    company: "Creative IT",
+    role: "Professional React & Frontend Certification",
+    company: "Creative IT Institute",
     type: "award",
     achievements: [
-      "Completed full React certification curriculum",
-      "Built 5 small projects to practice React concepts",
-      "Learned hooks, context, and basic state management",
+      "Completed an intensive industry-aligned curriculum covering modern React architecture and frontend engineering",
+      "Engineered 5+ production-ready web applications featuring dynamic routing, custom hooks, and Context API",
+      "Recognized for clean code structure, component modularity, and responsive UI/UX implementation",
     ],
-    stack: ["React", "JavaScript", "CSS"],
+    stack: ["React", "JavaScript (ES6+)", "REST APIs", "Tailwind CSS"],
   },
   {
     period: "2023 – 2024",
-    role: "Self-taught Web Developer",
-    company: "Personal Projects",
+    role: "Web Application Developer",
+    company: "Open-Source & Portfolio Engineering",
     type: "work",
     achievements: [
-      "Learned HTML, CSS, JavaScript, and React from scratch",
-      "Built 10+ projects on GitHub for learning",
-      "Gained understanding of frontend basics and responsive UI",
+      "Built and deployed 10+ responsive web applications, e-commerce storefronts, and interactive dashboards",
+      "Established strong foundations in semantic HTML5, modern CSS3, asynchronous JavaScript, and Git workflows",
+      "Integrated third-party APIs, payment workflows, and responsive layouts with mobile-first design principles",
     ],
-    stack: ["HTML", "CSS", "JavaScript", "React"],
+    stack: ["JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
   },
 ];
+
 export default function Experience() {
   const t = useTranslations("Experience");
   return (

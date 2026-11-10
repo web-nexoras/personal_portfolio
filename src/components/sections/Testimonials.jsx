@@ -73,7 +73,7 @@ function TestimonialCard({ testimonial }) {
       <Quote size={32} className="mb-5 opacity-25" style={{ color: testimonial.color }} />
 
       <p className="text-foreground text-lg leading-relaxed mb-6 italic">
-        "{testimonial.quote}"
+        &ldquo;{testimonial.quote}&rdquo;
       </p>
 
       <StarRating rating={testimonial.rating} />
@@ -110,7 +110,7 @@ export default function Testimonials() {
         tag=" testimonials"
         title="What Clients"
         highlight="Say"
-        subtitle="Don't take my word for it — hear from people I've worked with."
+        subtitle="Don&apos;t take my word for it — hear from people I&apos;ve worked with."
       />
 
       <div className="relative">

@@ -113,7 +113,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid hsl(var(--border))" }}
         >
           <p className="text-muted-foreground text-xs">
-            {t("copyright", { year: new Date().getFullYear(), brand: siteConfig.brand })} 🖤
+            {t("copyright", { year: new Date().getFullYear(), brand: siteConfig.brand })}
           </p>
 
           <motion.button

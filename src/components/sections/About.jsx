@@ -12,16 +12,16 @@ import { useTranslations } from "next-intl";
 const stats = [
   { value: "10+", label: "Projects Shipped" },
   { value: "2+", label: "Years Experience" },
-  { value: "5+", label: "Happy Clients" },
-  { value: "15+", label: "Tech Skills" },
+  { value: "100%", label: "Client Satisfaction" },
+  { value: "15+", label: "Core Technologies" },
 ];
 
 const highlights = [
-  "MERN stack developer — MongoDB, Express.js, React & Node.js end to end",
-  "Building REST APIs and integrating them with modern React/Next.js frontends",
-  "Focus on performance, scalability & responsive web design",
-  "Clean, user-friendly UI with Tailwind CSS and reusable components",
-  "Open to learning new technologies and contributing to real-world projects",
+  "End-to-end MERN stack development — MongoDB, Express.js, React.js, Next.js & Node.js",
+  "Designing secure RESTful APIs with JWT authentication, validation, and role-based access control",
+  "Engineering high-performance, SEO-optimized, and responsive user interfaces with Tailwind CSS",
+  "Database schema modeling, indexing, and query optimization for production workloads",
+  "Delivering clean, modular codebases with modern Git workflows and cloud deployments",
 ];
 
 const fadeUp = (delay = 0) => ({
@@ -74,10 +74,10 @@ export default function About() {
             />
 
             <motion.div
-              className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-2xl overflow-hidden"
+              className="relative w-[min(18rem,calc(100vw-3rem))] aspect-[0.9] sm:w-80 sm:h-96 sm:aspect-auto rounded-2xl overflow-hidden"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.35 }}
-              style={{ boxShadow: "0 20px 60px hsl(var(--primary) / 0.2), 0 4px 16px hsl(0 0% 0% / 0.15)" }}
+              style={{ position: "relative", boxShadow: "0 20px 60px hsl(var(--primary) / 0.2), 0 4px 16px hsl(0 0% 0% / 0.15)" }}
             >
               <Image
                 src="/assets/profile.jpg"
@@ -101,7 +101,7 @@ export default function About() {
                     {siteConfig.brand}
                   </p>
                   <p className="text-xs font-mono mt-0.5" style={{ color: "hsl(var(--primary))" }}>
-                    MERN Stack &amp; Full Stack Developer
+                    MERN Stack &amp; Full-Stack Developer
                   </p>
                 </div>
               </div>
@@ -146,15 +146,15 @@ export default function About() {
         <motion.div {...fadeRight(0.1)} className="space-y-6 order-1 lg:order-2">
           <div>
             <p className="text-muted-foreground text-base leading-relaxed mb-4">
-              Hey there — we&apos;re <span className="gradient-text font-semibold">{siteConfig.brand}</span>,
-              a MERN stack development team living at the intersection of engineering and design. We
-              transform complex ideas into elegant, fast, and accessible web experiences.
+              Hello — I&apos;m <span className="gradient-text font-semibold">{siteConfig.brand}</span>,
+              a full-stack MERN developer working at the intersection of software engineering and modern UI design. I
+              transform complex business requirements into fast, reliable, and intuitive web applications.
             </p>
             <p className="text-muted-foreground text-base leading-relaxed">
-              With a deep focus on <span className="text-foreground font-medium">full-stack architecture</span>,{" "}
-              <span className="text-foreground font-medium">clean code</span>, and{" "}
-              <span className="text-foreground font-medium">delightful UI</span>, we bring both technical
-              rigour and a designer&apos;s eye to every project we ship.
+              With a strong focus on <span className="text-foreground font-medium">scalable architecture</span>,{" "}
+              <span className="text-foreground font-medium">clean maintainable code</span>, and{" "}
+              <span className="text-foreground font-medium">responsive user experience</span>, I bring both engineering
+              rigor and attention to detail to every product I deliver.
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export default function About() {
                 boxShadow: "0 4px 18px hsl(var(--primary) / 0.35)",
               }}
             >
-              Hire Us <ArrowUpRight size={14} />
+              Hire Me <ArrowUpRight size={14} />
             </motion.a>
             <motion.a
               href={siteConfig.resumeUrl}
@@ -216,7 +216,7 @@ export default function About() {
               className="flex flex-col items-center justify-center py-8 px-4 text-center"
             >
               <span className="font-bold text-4xl gradient-text">{s.value}</span>
-              <span className="text-muted-foreground text-xs uppercase tracking-widest">{s.label}</span>
+              <span className="text-muted-foreground text-xs uppercase tracking-widest mt-1">{s.label}</span>
             </motion.div>
           ))}
         </div>

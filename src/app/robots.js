@@ -1,8 +1,10 @@
-const baseUrl = "https://webnexoras.com";
+import { siteConfig } from "@/lib/site-config";
 
 export default function robots() {
   return {
-    rules: { userAgent: "*", allow: "/" },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    rules: [
+      { userAgent: "*", allow: "/", disallow: ["/admin"] },
+    ],
+    sitemap: `${siteConfig.siteUrl}/sitemap.xml`,
   };
 }
